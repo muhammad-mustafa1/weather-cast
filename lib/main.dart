@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_cast/Features/splash/presentation/views/splash_view.dart';
+import 'package:weather_cast/Core/utils/app_router.dart';
 
 void main() {
   runApp(const WeatherCast());
@@ -10,12 +10,12 @@ class WeatherCast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       title: 'WeatherCast',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashView(),
     );
   }
 }
