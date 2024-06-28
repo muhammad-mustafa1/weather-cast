@@ -11,6 +11,7 @@ class WeatherCast extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
       title: 'WeatherCast',
       theme: ThemeData(
