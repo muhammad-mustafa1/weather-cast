@@ -16,7 +16,6 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
           endPoint: 'current.json?key=$apiKey &q=$cityName&aqi=no');
-      print(data);
 
       return right(WeatherModel.fromJson(data));
     } catch (e) {
