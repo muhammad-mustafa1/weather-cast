@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_cast/Features/splash/presentation/views/splash_view.dart';
 
 void main() {
   runApp(const WeatherCast());
@@ -14,7 +15,7 @@ class WeatherCast extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: const SplashView(),
     );
   }
 }
