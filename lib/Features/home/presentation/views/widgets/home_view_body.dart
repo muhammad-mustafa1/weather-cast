@@ -13,9 +13,9 @@ class HomeViewBody extends StatelessWidget {
         child: Column(
           children: [
             const CustomAppBar(),
-            const SizedBox(height: 72),
+            const SizedBox(height: 24),
             Image.asset('assets/images/logo.png', width: 120, height: 120),
-            const SizedBox(height: 34),
+            const SizedBox(height: 24),
             const WeatherCard(),
           ],
         ),

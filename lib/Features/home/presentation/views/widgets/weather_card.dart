@@ -12,7 +12,7 @@ class WeatherCard extends StatelessWidget {
       color: Colors.white.withOpacity(.3),
       child: const Column(
         children: [
-          SizedBox(height: 17),
+          SizedBox(height: 16),
           Text(
             'Today, 12 Septamber',
             style: TextStyle(fontSize: 18, color: Colors.white),
@@ -28,11 +28,15 @@ class WeatherCard extends StatelessWidget {
           Text(
             'Cloudy',
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white),
+              height: 1,
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+              color: Colors.white,
+            ),
           ),
-          SizedBox(height: 34),
+          SizedBox(height: 16),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 67),
+            padding: EdgeInsets.symmetric(horizontal: 40),
             child: Column(
               children: [
                 WeatherDetailsItem(
@@ -40,13 +44,13 @@ class WeatherCard extends StatelessWidget {
                   text: 'Wind',
                   value: '10 km/h',
                 ),
-                SizedBox(height: 21),
+                SizedBox(height: 20),
                 WeatherDetailsItem(
                   icon: 'assets/icons/hum.png',
                   text: 'Hum ',
                   value: '26 %',
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 16),
               ],
             ),
           )
