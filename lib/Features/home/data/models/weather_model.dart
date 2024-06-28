@@ -2,10 +2,10 @@ class WeatherModel {
   final String cityName;
   final String image;
   final String date;
-  final String temp;
+  final num temp;
   final String condition;
-  final String wind;
-  final String hum;
+  final num wind;
+  final num hum;
 
   WeatherModel(
       {required this.cityName,
