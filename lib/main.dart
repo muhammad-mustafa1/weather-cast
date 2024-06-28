@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_cast/Core/utils/app_router.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class WeatherCast extends StatelessWidget {
       routerConfig: AppRouter.router,
       title: 'WeatherCast',
       theme: ThemeData(
+        fontFamily: GoogleFonts.overpass().fontFamily,
         primarySwatch: Colors.blue,
       ),
     );
