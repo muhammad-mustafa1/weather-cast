@@ -6,13 +6,19 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 48),
-          child: CustomAppBar(),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 48),
+      child: Column(
+        children: [
+          const CustomAppBar(),
+          const SizedBox(height: 72),
+          Image.asset(
+            'assets/images/logo.png',
+            width: 160,
+            height: 160,
+          ),
+        ],
+      ),
     );
   }
 }
