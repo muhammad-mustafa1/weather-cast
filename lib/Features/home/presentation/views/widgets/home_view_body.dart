@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_cast/Features/home/data/models/weather_model/forecast.dart';
+import 'package:weather_cast/Core/widgets/custom_error_widget.dart';
 import 'package:weather_cast/Features/home/data/models/weather_model/hour.dart';
 import 'package:weather_cast/Features/home/data/models/weather_model/weather_model.dart';
 import 'package:weather_cast/Features/home/presentation/manager/weather_cubit.dart';
@@ -41,11 +40,7 @@ class HomeViewBody extends StatelessWidget {
                 ],
               );
             } else if (state is WeatherFailure) {
-              return Column(
-                children: [
-                  Center(child: Text(state.errorMessage)),
-                ],
-              );
+              return CustomErrorWidget(errorMessage: state.errorMessage);
             } else {
               return const Center(child: CircularProgressIndicator());
             }
