@@ -20,7 +20,7 @@ class WeatherCard extends StatelessWidget {
             style: TextStyle(fontSize: 18, color: Colors.white),
           ),
           Text(
-            '${weatherModel.current!.tempC!.ceil()}°C',
+            '${weatherModel.current!.tempC!.ceil()}°',
             style: const TextStyle(
               fontSize: 100,
               color: Colors.white,

@@ -33,6 +33,7 @@ class HomeViewBody extends StatelessWidget {
                   WeatherCard(
                     weatherModel: state.weatherModel,
                   ),
+                  const ForecastWeatherItem()
                 ],
               );
             } else {
@@ -45,6 +46,27 @@ class HomeViewBody extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+}
+
+class ForecastWeatherItem extends StatelessWidget {
+  const ForecastWeatherItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Text(
+          '24°',
+          style: TextStyle(fontSize: 18, color: Colors.white),
+        ),
+        Image.asset('assets/images/logo.png', width: 50, height: 50),
+        const Text(
+          '17:00',
+          style: TextStyle(fontSize: 18, color: Colors.white),
+        ),
+      ],
     );
   }
 }
