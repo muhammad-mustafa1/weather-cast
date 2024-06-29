@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:weather_cast/Core/errors/failures.dart';
 import 'package:weather_cast/Core/utils/api_service.dart';
-import 'package:weather_cast/Features/home/data/models/weather_model.dart';
+import 'package:weather_cast/Features/home/data/models/weather_model/weather_model.dart';
 import 'package:weather_cast/Features/home/data/repos/home_repo.dart';
 
 class HomeRepoImpl implements HomeRepo {
@@ -15,7 +15,7 @@ class HomeRepoImpl implements HomeRepo {
       {required String cityName}) async {
     try {
       var data = await apiService.get(
-          endPoint: 'current.json?key=$apiKey &q=$cityName&aqi=no');
+          endPoint: 'forecast.json?key=$apiKey &q=$cityName&aqi=no');
       return right(WeatherModel.fromJson(data));
     } catch (e) {
       if (e is DioException) {
@@ -24,12 +24,5 @@ class HomeRepoImpl implements HomeRepo {
         return left(ServerFailure(errorMessage: e.toString()));
       }
     }
-  }
-
-  @override
-  Future<Either<Exception, WeatherModel>> fetchForecastWeather(
-      {required String cityName}) {
-    // TODO: implement fetchForecastWeather
-    throw UnimplementedError();
   }
 }

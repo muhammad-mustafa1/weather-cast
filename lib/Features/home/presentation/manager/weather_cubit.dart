@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:weather_cast/Features/home/data/models/weather_model.dart';
+import 'package:weather_cast/Features/home/data/models/weather_model/weather_model.dart';
 import 'package:weather_cast/Features/home/data/repos/home_repo.dart';
 part 'weather_state.dart';
 

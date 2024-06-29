@@ -28,7 +28,11 @@ class HomeViewBody extends StatelessWidget {
                 ],
               );
             } else {
-              return const Center(child: Text('Something went wrong'));
+              return const Column(
+                children: [
+                  Center(child: Text('Something went wrong')),
+                ],
+              );
             }
           },
         ),
