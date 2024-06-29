@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_cast/Features/home/data/models/weather_model/forecast.dart';
+import 'package:weather_cast/Features/home/data/models/weather_model/hour.dart';
+import 'package:weather_cast/Features/home/data/models/weather_model/weather_model.dart';
 import 'package:weather_cast/Features/home/presentation/manager/weather_cubit.dart';
 import 'package:weather_cast/Features/home/presentation/views/widgets/weather_card.dart';
 import 'package:weather_cast/Features/splash/presentation/views/widgets/custom_app_bar.dart';
@@ -33,7 +37,9 @@ class HomeViewBody extends StatelessWidget {
                   WeatherCard(
                     weatherModel: state.weatherModel,
                   ),
-                  const ForecastWeatherItem()
+                  ForecastWeatherlist(
+                    weatherModel: state.weatherModel,
+                  )
                 ],
               );
             } else {
@@ -50,20 +56,41 @@ class HomeViewBody extends StatelessWidget {
   }
 }
 
-class ForecastWeatherItem extends StatelessWidget {
-  const ForecastWeatherItem({super.key});
+class ForecastWeatherlist extends StatelessWidget {
+  const ForecastWeatherlist({super.key, required this.weatherModel});
+  final WeatherModel weatherModel;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 120,
+      child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemCount: weatherModel.forecast!.forecastday![0].hour!.length,
+        itemBuilder: (context, index) => ForecastWeatherItem(
+            hourModel: weatherModel.forecast!.forecastday![0].hour![index]),
+      ),
+    );
+  }
+}
 
+class ForecastWeatherItem extends StatelessWidget {
+  const ForecastWeatherItem({super.key, required this.hourModel});
+  final Hour hourModel;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          '24°',
-          style: TextStyle(fontSize: 18, color: Colors.white),
+        Text(
+          '${hourModel.tempC!.ceil()}°',
+          style: const TextStyle(fontSize: 18, color: Colors.white),
         ),
-        Image.asset('assets/images/logo.png', width: 50, height: 50),
+        Image.network(
+          'https:${hourModel.condition!.icon}',
+        ),
         const Text(
           '17:00',
+          //TODO: add time
           style: TextStyle(fontSize: 18, color: Colors.white),
         ),
       ],

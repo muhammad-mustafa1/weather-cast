@@ -9,7 +9,7 @@ class WeatherCubit extends Cubit<WeatherState> {
   Future<void> getWeather({required String cityName}) async {
     emit(WeatherLoading());
 
-    var result = await homeRepo.fetchCurrentWeather(cityName: cityName);
+    var result = await homeRepo.fetchWeather(cityName: cityName);
 
     result.fold((falure) {
       emit(WeatherFailure(errorMessage: falure.toString()));

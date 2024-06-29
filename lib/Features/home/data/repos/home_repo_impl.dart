@@ -11,11 +11,11 @@ class HomeRepoImpl implements HomeRepo {
   String apiKey = '0a9cfdbf27834268a87221037242606';
   HomeRepoImpl({required this.apiService});
   @override
-  Future<Either<Failure, WeatherModel>> fetchCurrentWeather(
+  Future<Either<Failure, WeatherModel>> fetchWeather(
       {required String cityName}) async {
     try {
       var data = await apiService.get(
-          endPoint: 'forecast.json?key=$apiKey &q=$cityName&aqi=no');
+          endPoint: 'forecast.json?key=$apiKey &q=$cityName&aqi=no&days=7');
       return right(WeatherModel.fromJson(data));
     } catch (e) {
       if (e is DioException) {
