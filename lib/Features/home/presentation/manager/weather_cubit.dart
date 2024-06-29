@@ -12,7 +12,7 @@ class WeatherCubit extends Cubit<WeatherState> {
     var result = await homeRepo.fetchWeather(cityName: cityName);
 
     result.fold((falure) {
-      emit(WeatherFailure(errorMessage: falure.toString()));
+      emit(WeatherFailure(errorMessage: falure.errorMessage));
     }, (weather) {
       emit(WeatherSuccess(weatherModel: weather));
     });

@@ -18,9 +18,7 @@ class HomeViewBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: BlocBuilder<WeatherCubit, WeatherState>(
           builder: (context, state) {
-            if (state is WeatherLoading) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (state is WeatherSuccess) {
+            if (state is WeatherSuccess) {
               return Column(
                 children: [
                   CustomAppBar(
@@ -42,12 +40,14 @@ class HomeViewBody extends StatelessWidget {
                   )
                 ],
               );
-            } else {
-              return const Column(
+            } else if (state is WeatherFailure) {
+              return Column(
                 children: [
-                  Center(child: Text('Something went wrong')),
+                  Center(child: Text(state.errorMessage)),
                 ],
               );
+            } else {
+              return const Center(child: CircularProgressIndicator());
             }
           },
         ),
