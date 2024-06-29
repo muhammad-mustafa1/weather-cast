@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
+    required this.cityName,
   });
-
+  final String cityName;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -14,9 +15,9 @@ class CustomAppBar extends StatelessWidget {
           color: Colors.white,
         ),
         const SizedBox(width: 23),
-        const Text(
-          'Semarang',
-          style: TextStyle(
+        Text(
+          cityName,
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 24,
             fontWeight: FontWeight.bold,

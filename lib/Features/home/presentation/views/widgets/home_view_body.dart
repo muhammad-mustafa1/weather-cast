@@ -19,12 +19,20 @@ class HomeViewBody extends StatelessWidget {
             } else if (state is WeatherSuccess) {
               return Column(
                 children: [
-                  const CustomAppBar(),
+                  CustomAppBar(
+                    cityName: state.weatherModel.location!.name!,
+                  ),
                   const SizedBox(height: 24),
-                  Image.asset('assets/images/logo.png',
-                      width: 120, height: 120),
+                  Image.network(
+                    'http:${state.weatherModel.current!.condition!.icon!}',
+                    width: 128,
+                    height: 128,
+                    fit: BoxFit.cover,
+                  ),
                   const SizedBox(height: 24),
-                  const WeatherCard(),
+                  WeatherCard(
+                    weatherModel: state.weatherModel,
+                  ),
                 ],
               );
             } else {
