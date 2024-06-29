@@ -13,14 +13,12 @@ class CurrentWeatherSection extends StatelessWidget {
         CustomAppBar(
           cityName: weatherModel.location!.name!,
         ),
-        const SizedBox(height: 24),
         Image.network(
           'http:${weatherModel.current!.condition!.icon!}',
           width: 128,
           height: 128,
           fit: BoxFit.cover,
         ),
-        const SizedBox(height: 24),
         WeatherCard(
           weatherModel: weatherModel,
         ),

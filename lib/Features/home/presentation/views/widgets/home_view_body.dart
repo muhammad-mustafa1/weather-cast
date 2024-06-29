@@ -24,6 +24,7 @@ class HomeViewBody extends StatelessWidget {
                   child:
                       CurrentWeatherSection(weatherModel: state.weatherModel),
                 ),
+                const SizedBox(height: 20),
                 ForecastWeatherlist(
                   weatherModel: state.weatherModel,
                 )
