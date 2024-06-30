@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_cast/Core/functions/format_date_time.dart';
 import 'package:weather_cast/Features/home/data/models/weather_model/hour.dart';
 
 class ForecastWeatherItem extends StatelessWidget {
@@ -7,6 +8,7 @@ class ForecastWeatherItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           '${hourModel.tempC!.ceil()}°',
@@ -15,10 +17,9 @@ class ForecastWeatherItem extends StatelessWidget {
         Image.network(
           'https:${hourModel.condition!.icon}',
         ),
-        const Text(
-          '17:00',
-          //TODO: add time
-          style: TextStyle(fontSize: 18, color: Colors.white),
+        Text(
+          "${formateDateTime(hourModel.time!).hour.toString()}:00",
+          style: const TextStyle(fontSize: 18, color: Colors.white),
         ),
       ],
     );

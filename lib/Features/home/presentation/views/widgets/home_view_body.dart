@@ -10,33 +10,29 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        top: 48,
-      ),
-      child: BlocBuilder<WeatherCubit, WeatherState>(
-        builder: (context, state) {
-          if (state is WeatherSuccess) {
-            return ListView(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child:
-                      CurrentWeatherSection(weatherModel: state.weatherModel),
-                ),
-                const SizedBox(height: 20),
-                ForecastWeatherlist(
-                  weatherModel: state.weatherModel,
-                )
-              ],
-            );
-          } else if (state is WeatherFailure) {
-            return CustomErrorWidget(errorMessage: state.errorMessage);
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        },
-      ),
+    return BlocBuilder<WeatherCubit, WeatherState>(
+      builder: (context, state) {
+        if (state is WeatherSuccess) {
+          return ListView(
+            children: [
+              const SizedBox(height: 48),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: CurrentWeatherSection(weatherModel: state.weatherModel),
+              ),
+              const SizedBox(height: 20),
+              ForecastWeatherlist(
+                weatherModel: state.weatherModel,
+              ),
+              const SizedBox(height: 20)
+            ],
+          );
+        } else if (state is WeatherFailure) {
+          return CustomErrorWidget(errorMessage: state.errorMessage);
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
     );
   }
 }
