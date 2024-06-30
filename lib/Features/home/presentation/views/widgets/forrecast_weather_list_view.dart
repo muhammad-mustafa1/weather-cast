@@ -62,7 +62,7 @@ class _ForecastWeatherlistState extends State<ForecastWeatherlist> {
     for (var element in widget.weatherModel.forecast!.forecastday![0].hour!) {
       var forecastTime = formateDateTime(element.time!);
       var currentTime =
-          formateDateTime(widget.weatherModel.location!.localtime!);
+          formateDateTime(widget.weatherModel.current!.lastUpdated!);
       if (forecastTime.hour == currentTime.hour) {
         currentIndex = forecastTime.hour;
       }
