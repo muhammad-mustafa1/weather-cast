@@ -1,4 +1,4 @@
-class Location {
+class LocationModel {
   int? id;
   String? name;
   String? region;
@@ -7,7 +7,7 @@ class Location {
   double? lon;
   String? url;
 
-  Location({
+  LocationModel({
     this.id,
     this.name,
     this.region,
@@ -17,7 +17,7 @@ class Location {
     this.url,
   });
 
-  factory Location.fromJson(Map<String, dynamic> json) => Location(
+  factory LocationModel.fromJson(Map<String, dynamic> json) => LocationModel(
         id: json['id'] as int?,
         name: json['name'] as String?,
         region: json['region'] as String?,
