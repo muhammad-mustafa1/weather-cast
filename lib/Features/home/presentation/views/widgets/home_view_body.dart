@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_cast/Core/widgets/custom_error_widget.dart';
-import 'package:weather_cast/Features/home/presentation/manager/weather_cubit.dart';
+import 'package:weather_cast/Features/home/presentation/manager/weather_cubit/weather_cubit.dart';
 import 'package:weather_cast/Features/home/presentation/views/widgets/current_weather_section.dart';
 import 'package:weather_cast/Features/home/presentation/views/widgets/forrecast_weather_list_view.dart';
 

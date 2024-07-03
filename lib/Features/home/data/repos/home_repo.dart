@@ -6,6 +6,6 @@ import 'package:weather_cast/Features/home/data/models/weather_model/weather_mod
 abstract class HomeRepo {
   Future<Either<Failure, WeatherModel>> fetchWeather(
       {required String cityName});
-  Future<Either<Failure, LocationModel>> fetchCities(
+  Future<Either<Failure, List<LocationModel>>> fetchCities(
       {required String cityName});
 }

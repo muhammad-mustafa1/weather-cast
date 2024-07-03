@@ -28,12 +28,17 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, LocationModel>> fetchCities(
+  Future<Either<Failure, List<LocationModel>>> fetchCities(
       {required String cityName}) async {
     try {
-      var data =
-          await apiService.get(endPoint: 'search.json?key=$apiKey&q=$cityName');
-      return right(LocationModel.fromJson(data));
+      var data = await apiService.get(
+          endPoint: 'search.json?key=$apiKey &q=$cityName');
+      List<LocationModel> cities = [];
+
+      for (var item in data) {
+        cities.add(LocationModel.fromJson(item));
+      }
+      return right(cities);
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));

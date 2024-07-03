@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_cast/Features/home/data/models/weather_model/weather_model.dart';
+import 'package:weather_cast/Features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:weather_cast/Features/home/presentation/views/widgets/weather_card.dart';
-import 'package:weather_cast/Features/splash/presentation/views/widgets/custom_app_bar.dart';
 
 class CurrentWeatherSection extends StatelessWidget {
   const CurrentWeatherSection({super.key, required this.weatherModel});
