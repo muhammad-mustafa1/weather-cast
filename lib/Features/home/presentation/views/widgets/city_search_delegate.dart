@@ -62,7 +62,8 @@ class CitySearchDelegate extends SearchDelegate<LocationModel> {
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(state.locations[index].name!),
-                  subtitle: Text(state.locations[index].country!),
+                  subtitle: Text(removeIsraelFromLocation(
+                      state.locations[index].country!)),
                   leading: const Icon(Icons.location_on),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () {
@@ -77,5 +78,15 @@ class CitySearchDelegate extends SearchDelegate<LocationModel> {
             return Container();
           }
         });
+  }
+}
+
+String removeIsraelFromLocation(String country) {
+  if (country == 'Israel') {
+    return 'palastine';
+  } else if (country.contains('إسرائيل') || country == 'سرائيل') {
+    return 'فلسطين';
+  } else {
+    return country;
   }
 }
