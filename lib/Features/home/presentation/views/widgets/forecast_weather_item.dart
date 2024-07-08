@@ -1,5 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_cast/Core/functions/format_date_time.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_cast/Features/home/data/models/weather_model/hour.dart';
 
 class ForecastWeatherItem extends StatelessWidget {
@@ -14,11 +15,12 @@ class ForecastWeatherItem extends StatelessWidget {
           '${hourModel.tempC!.ceil()}°',
           style: const TextStyle(fontSize: 18, color: Colors.white),
         ),
-        Image.network(
-          'https:${hourModel.condition!.icon}',
+        CachedNetworkImage(
+          imageUrl: 'https:${hourModel.condition!.icon}',
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
         Text(
-          "${formateDateTime(hourModel.time!).hour.toString()}:00",
+          DateFormat.j().format(DateTime.parse(hourModel.time!)),
           style: const TextStyle(fontSize: 18, color: Colors.white),
         ),
       ],

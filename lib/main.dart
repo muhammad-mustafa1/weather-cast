@@ -16,8 +16,8 @@ class WeatherCast extends StatelessWidget {
       routerConfig: AppRouter.router,
       title: 'WeatherCast',
       theme: ThemeData(
+        // textTheme: GoogleFonts.overpassTextTheme(Theme.of(context).textTheme),
         fontFamily: GoogleFonts.overpass().fontFamily,
-        primarySwatch: Colors.blue,
       ),
     );
   }

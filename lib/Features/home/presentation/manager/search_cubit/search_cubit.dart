@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_cast/Features/home/data/models/location_model/location_model.dart';
+import 'package:weather_cast/Features/home/data/models/weather_model/location.dart';
 import 'package:weather_cast/Features/home/data/repos/home_repo.dart';
 
 part 'search_state.dart';

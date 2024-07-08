@@ -46,7 +46,7 @@ class CustomAppBar extends StatelessWidget {
               (value) {
                 if (value != null) {
                   BlocProvider.of<WeatherCubit>(context)
-                      .getWeather(cityName: value.name!);
+                      .fetchWeather(cityName: value.name!);
                 }
               },
             );

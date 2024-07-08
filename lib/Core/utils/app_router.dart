@@ -22,7 +22,8 @@ abstract class AppRouter {
         builder: (context, state) => BlocProvider(
           create: (context) => WeatherCubit(
               homeRepo: HomeRepoImpl(apiService: ApiService(dio: Dio())))
-            ..getWeather(cityName: 'cairo'),
+            // ignore: missing_required_param
+            ..fetchWeather(),
           child: const HomeView(),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_cast/Core/utils/styles.dart';
 
 class WeatherDetailsItem extends StatelessWidget {
   const WeatherDetailsItem({
@@ -13,6 +14,8 @@ class WeatherDetailsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
           icon,
@@ -21,18 +24,18 @@ class WeatherDetailsItem extends StatelessWidget {
         const SizedBox(width: 20),
         Text(
           text,
-          style: const TextStyle(fontSize: 18, color: Colors.white),
+          style: Styles.textStyle18.copyWith(fontWeight: FontWeight.normal),
         ),
         const SizedBox(width: 20),
         Container(
           color: Colors.white,
           width: 1,
-          height: 21,
+          height: 18,
         ),
         const SizedBox(width: 20),
         Text(
           value,
-          style: const TextStyle(color: Colors.white, fontSize: 18),
+          style: Styles.textStyle18.copyWith(fontWeight: FontWeight.normal),
         )
       ],
     );

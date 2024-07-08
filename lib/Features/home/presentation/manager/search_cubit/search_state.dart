@@ -8,7 +8,7 @@ class SearchInitial extends SearchState {}
 class SearchLoading extends SearchState {}
 
 class SearchSuccess extends SearchState {
-  final List<LocationModel> locations;
+  final List<Location> locations;
 
   SearchSuccess({required this.locations});
 }

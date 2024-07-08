@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:weather_cast/Core/functions/format_date_time.dart';
 import 'package:weather_cast/Features/home/data/models/weather_model/weather_model.dart';
 import 'package:weather_cast/Features/home/presentation/views/widgets/forecast_weather_item.dart';
 
@@ -38,7 +38,6 @@ class _ForecastWeatherlistState extends State<ForecastWeatherlist> {
                       BorderSide(width: 1, color: Colors.white38))
                   : null,
               color: currentIndex == index ? const Color(0xff6BBDEB) : null,
-              //  currentIndex == index ? const Color(0xff6BBDEB) : null,
             ),
             margin: EdgeInsets.symmetric(horizontal: index != 0 ? 6 : 12),
             padding: const EdgeInsets.all(4),
@@ -60,11 +59,11 @@ class _ForecastWeatherlistState extends State<ForecastWeatherlist> {
 
   void changeForecastInitialIndex() {
     for (var element in widget.weatherModel.forecast!.forecastday![0].hour!) {
-      var forecastTime = formateDateTime(element.time!);
-      var currentTime =
-          formateDateTime(widget.weatherModel.current!.lastUpdated!);
-      if (forecastTime.hour == currentTime.hour) {
-        currentIndex = forecastTime.hour;
+      var forecastTime = DateFormat.H().format(DateTime.parse(element.time!));
+      var currentTime = DateFormat.H()
+          .format(DateTime.parse(widget.weatherModel.current!.lastUpdated!));
+      if (forecastTime == currentTime) {
+        currentIndex = int.parse(forecastTime);
       }
     }
   }

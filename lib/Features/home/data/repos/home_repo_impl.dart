@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:weather_cast/Core/errors/failures.dart';
 import 'package:weather_cast/Core/utils/api_service.dart';
-import 'package:weather_cast/Features/home/data/models/location_model/location_model.dart';
+import 'package:weather_cast/Features/home/data/models/weather_model/location.dart';
 import 'package:weather_cast/Features/home/data/models/weather_model/weather_model.dart';
 import 'package:weather_cast/Features/home/data/repos/home_repo.dart';
 
@@ -28,15 +28,15 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<LocationModel>>> fetchCities(
+  Future<Either<Failure, List<Location>>> fetchCities(
       {required String cityName}) async {
     try {
       var data = await apiService.get(
           endPoint: 'search.json?key=$apiKey &q=$cityName');
-      List<LocationModel> cities = [];
+      List<Location> cities = [];
 
       for (var item in data) {
-        cities.add(LocationModel.fromJson(item));
+        cities.add(Location.fromJson(item));
       }
       return right(cities);
     } catch (e) {
