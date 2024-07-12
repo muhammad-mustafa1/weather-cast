@@ -18,7 +18,7 @@ A Flutter-based weather application that provides forecast weather information f
 - Utilizes WeatherAPI for accurate and up-to-date weather information
   
 ### You can download app 
-[https://github.com/muhammad-mustafa1/weather-cast/releases/download/v1.0.0/weather_cast.apk)
+[WeatherCast](https://github.com/muhammad-mustafa1/weather-cast/releases/download/v1.0.0/weather_cast.apk)
 
 # Tech Used
  ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
