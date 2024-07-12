@@ -7,7 +7,7 @@
 A Flutter-based weather application that provides forecast weather information for any city
 
 # Screenshots
- <img src="https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/first_run.gi">
+ <img src="https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/first_run.gif">
  <img src="https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/%232-.png"> 
  <img src="https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/%234-.png">
  <img src="https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/%233-.png">
