@@ -10,7 +10,13 @@
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/first_run.gif)
+
+![App Screenshot](https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/%232-.png)
+
+![App Screenshot](https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/%234-.png)
+
+![App Screenshot](https://github.com/muhammad-mustafa1/weather-cast/blob/main/Screenshots/%233-.png)
 
 
 ## Features
